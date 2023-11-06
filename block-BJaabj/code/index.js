@@ -69,7 +69,13 @@ getTable();
 */
 function isLeapYear(){
   let year=prompt("enter  year");
-  if(year%4===0){
+  if(year%400===0){
+    alert(`${year} is a leap year`);
+  }
+  else if(year%100===0){
+    alert(`${year} is not a leap year`);
+  }
+  else if(year%4===0){
     alert(`${year} is a leap year`);
   }
   else{
@@ -86,9 +92,10 @@ isLeapYear();
 */
 function getFactorial(){
   let number=Number(prompt("enter a number"));
-  for(i=1; i<n; i++){
-    factorial=i*(i-1)*1;
-    alert(factorial);
+  let final=1;
+  for(i=number; i>=1; i--){
+    final*=i;
   }
+  alert(`The factorial of ${number} is ${final}`)
 }
 getFactorial();
